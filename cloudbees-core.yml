@@ -85,6 +85,8 @@ spec:
     type: RollingUpdate
   template:
     metadata:
+      annotations:
+          cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
       name: cjoc
       labels:
         com.cloudbees.cje.type: cjoc
@@ -100,6 +102,8 @@ spec:
           value: KUBERNETES
         - name: JENKINS_OPTS
           value: --prefix=/cjoc
+        - name: CASC_JENKINS_CONFIG
+          value: /var/jenkins_config/cjoc-casc.yml
         - name: JAVA_OPTS
           # To allocate masters using a non-default storage class, add the following
           # -Dcom.cloudbees.masterprovisioning.kubernetes.KubernetesMasterProvisioning.storageClassName=some-storage-class
@@ -131,6 +135,8 @@ spec:
           mountPath: /var/jenkins_home
         - name: jenkins-configure-jenkins-groovy
           mountPath: /var/jenkins_config/configure-jenkins.groovy.d
+        - name: cjoc-casc		
+          mountPath: /var/jenkins_config
         livenessProbe:
           httpGet:
             path: /cjoc/login
@@ -141,6 +147,9 @@ spec:
       - name: jenkins-configure-jenkins-groovy
         configMap:
           name: cjoc-configure-jenkins-groovy
+      - name: cjoc-casc		
+        configMap:		
+          name: cjoc-casc
       securityContext:
         fsGroup: 1000
       imagePullSecrets:

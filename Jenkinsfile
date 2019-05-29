@@ -26,7 +26,7 @@ spec:
       steps {
         container('kubectl') {
           sh('kubectl -n cje apply -f casc.yml')
-          sh('kubectl -n cje apply -f cb-oc.yml')
+          sh('kubectl -n cje apply -f cloudbees-core.yml')
         } 
       }
     }

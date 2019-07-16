@@ -54,9 +54,9 @@ data:
         head: "  <style>\n    #loginIntroDefault { margin-bottom: -35px; }\n    #loginIntroDefault\
         \ h1 { display: none; }\n    #loginIntro h2 { font-size: 16px; }\n    .simple-page\
         \ form  { \n      width: auto; \n      min-width: 360px;\n      max-width: 400px;\n\
-        \    }\n    .simple-page .logo {\n        background-image: url('https://raw.githubusercontent.com/mluyo3414org/cloudbees-core-workshop/master/img/setup/CB-Lilly.png');\n\
+        \    }\n    .simple-page .logo {\n        background-image: url('https://raw.githubusercontent.com/mluyo3414org/cloudbees-core-workshop/master/img/setup/cloudbees_dwjwglobe2019_loop_1.gif');\n\
         \        background-repeat: no-repeat;\n        background-position: 50% 0;\n\
-        \        height: 120px;\n    }\n    .simple-page .footer {\n        padding-top:\
+        \        height: 200px;\n    }\n    .simple-page .footer {\n        padding-top:\
         \ 10px;\n        font-weight: 15pt;\n    }\n  </style>"
         header: "<div id=\"loginIntro\">\n  <h1 id=\"productName\">CloudBees Core Workshop</h1>\n\
         </div>"
